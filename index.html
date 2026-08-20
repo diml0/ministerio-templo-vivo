@@ -1,45 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Ministério Templo Vivo | Música Católica</title>
 
   <meta
     name="description"
-    content="Ministério Templo Vivo. Evangelizando e levando a Palavra de Deus através da música."
-  />
+    content="Ministério Templo Vivo. Colocando nossos dons a serviço de Deus através da música, da oração e da evangelização."
+  >
 
-  <meta name="theme-color" content="#6f6258" />
+  <meta name="theme-color" content="#00223E">
 
   <style>
-    :root {
-      --bg: #fbfaf8;
-      --surface: #ffffff;
-      --surface-soft: #f4f0eb;
 
-      --text: #252525;
-      --muted: #68635f;
+    /* =========================================================
+       FONTE OFICIAL
+    ========================================================= */
 
-      --primary: #8c7969;
-      --primary-dark: #655548;
-      --accent: #c9ad8f;
-
-      --whatsapp: #25d366;
-      --whatsapp-dark: #1da851;
-
-      --border: rgba(101, 85, 72, 0.14);
-      --shadow: 0 18px 50px rgba(65, 52, 43, 0.09);
-
-      --radius: 24px;
-      --container: 1120px;
+    @font-face {
+      font-family: "Sifonn Pro";
+      src: url("assets/fonts/SIFONN_PRO.otf") format("opentype");
+      font-style: normal;
+      font-weight: normal;
+      font-display: swap;
     }
 
+
+    /* =========================================================
+       IDENTIDADE VISUAL
+    ========================================================= */
+
+    :root {
+      --navy: #00223E;
+      --blue: #0072CE;
+      --white: #FFFFFF;
+
+      --background: #FFFFFF;
+      --background-soft: #F4F9FD;
+
+      --text: #00223E;
+      --text-light: #607284;
+
+      --border: rgba(0, 34, 62, 0.12);
+
+      --shadow:
+        0 20px 55px rgba(0, 34, 62, 0.12);
+
+      --radius: 26px;
+
+      --container: 1120px;
+
+      --whatsapp: #25D366;
+    }
+
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -48,17 +76,14 @@
 
     body {
       font-family:
-        Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
+        Arial,
+        Helvetica,
+        sans-serif;
 
-      background: var(--bg);
+      background: var(--background);
       color: var(--text);
-      line-height: 1.6;
-    }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+      line-height: 1.65;
     }
 
     img {
@@ -66,233 +91,371 @@
       max-width: 100%;
     }
 
-    button,
     a {
-      -webkit-tap-highlight-color: transparent;
+      color: inherit;
+      text-decoration: none;
     }
 
     .container {
-      width: min(calc(100% - 40px), var(--container));
+      width: min(
+        calc(100% - 40px),
+        var(--container)
+      );
+
       margin-inline: auto;
     }
 
-    /* =========================
+
+    /* =========================================================
+       TIPOGRAFIA
+    ========================================================= */
+
+    h1,
+    h2,
+    h3,
+    nav,
+    .button,
+    .section-label {
+      font-family:
+        "Sifonn Pro",
+        Arial,
+        sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: normal;
+    }
+
+
+    /* =========================================================
        HEADER
-    ========================= */
+    ========================================================= */
 
     header {
       position: sticky;
+
       top: 0;
+
       z-index: 100;
 
-      background: rgba(251, 250, 248, 0.92);
-      backdrop-filter: blur(16px);
+      background:
+        rgba(255, 255, 255, 0.96);
 
-      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(15px);
+
+      border-bottom:
+        1px solid var(--border);
     }
 
     .navbar {
-      min-height: 76px;
+      min-height: 82px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
-      gap: 24px;
+      gap: 30px;
     }
 
-    .brand {
+    .logo {
       display: flex;
+
       align-items: center;
-      gap: 12px;
-
-      font-weight: 800;
-      letter-spacing: -0.03em;
     }
 
-    .brand-mark {
-      width: 44px;
-      height: 44px;
+    .logo img {
+      width: 155px;
 
-      display: grid;
-      place-items: center;
+      height: auto;
 
-      border-radius: 50%;
-
-      background: var(--primary);
-      color: white;
-
-      font-size: 23px;
-
-      box-shadow: 0 8px 20px rgba(101, 85, 72, 0.2);
-    }
-
-    .brand-text small {
-      display: block;
-
-      color: var(--muted);
-      font-size: 0.69rem;
-      font-weight: 600;
-
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .brand-text strong {
-      display: block;
-      font-size: 1.03rem;
+      object-fit: contain;
     }
 
     nav {
       display: flex;
-      align-items: center;
-      gap: 28px;
 
-      font-size: 0.94rem;
-      font-weight: 600;
+      align-items: center;
+
+      gap: 30px;
+
+      font-size: 0.9rem;
+
+      letter-spacing: 0.04em;
     }
 
     nav a {
-      color: #4a4642;
+      position: relative;
 
       transition:
-        color 0.2s ease,
-        transform 0.2s ease;
+        color 0.2s ease;
     }
 
-    nav a:hover {
-      color: var(--primary);
+    nav a:not(.nav-button):hover {
+      color: var(--blue);
     }
 
-    .nav-contact {
-      padding: 10px 18px;
+    nav a:not(.nav-button)::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: -7px;
+
+      width: 0;
+
+      height: 2px;
+
+      background: var(--blue);
+
+      transition:
+        width 0.25s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-button {
+      padding:
+        11px
+        19px;
 
       border-radius: 999px;
 
-      background: var(--primary);
-      color: white !important;
+      background: var(--blue);
+
+      color: white;
+
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
-    .nav-contact:hover {
-      background: var(--primary-dark);
+    .nav-button:hover {
+      background: var(--navy);
+
       transform: translateY(-1px);
     }
 
-    /* =========================
+
+    /* =========================================================
        HERO
-    ========================= */
+    ========================================================= */
 
     .hero {
       position: relative;
 
       overflow: hidden;
 
-      padding: 105px 0 90px;
+      min-height: 610px;
+
+      display: flex;
+
+      align-items: center;
+
+      padding:
+        100px
+        0;
+
+      color: white;
 
       background:
         radial-gradient(
-          circle at 10% 10%,
-          rgba(201, 173, 143, 0.3),
-          transparent 35%
+          circle at 85% 30%,
+          rgba(0, 114, 206, 0.45),
+          transparent 32%
         ),
-        radial-gradient(
-          circle at 90% 80%,
-          rgba(140, 121, 105, 0.18),
-          transparent 38%
-        ),
-        linear-gradient(180deg, #fff 0%, #f8f4ef 100%);
+        linear-gradient(
+          125deg,
+          #00223E 0%,
+          #003A64 55%,
+          #00223E 100%
+        );
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+
+      height: 500px;
+
+      right: -180px;
+
+      top: -220px;
+
+      border:
+        1px solid rgba(
+          255,
+          255,
+          255,
+          0.12
+        );
+
+      border-radius: 50%;
     }
 
     .hero::after {
-      content: "♪";
+      content: "";
 
       position: absolute;
-      right: 7%;
-      top: 8%;
 
-      font-size: clamp(180px, 25vw, 360px);
-      font-weight: 900;
+      width: 380px;
 
-      color: rgba(140, 121, 105, 0.045);
+      height: 380px;
 
-      pointer-events: none;
+      right: -70px;
+
+      bottom: -250px;
+
+      border:
+        1px solid rgba(
+          0,
+          114,
+          206,
+          0.65
+        );
+
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      position: relative;
+
+      z-index: 2;
+
+      display: grid;
+
+      grid-template-columns:
+        1.12fr
+        0.88fr;
+
+      align-items: center;
+
+      gap: 80px;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 2;
-
-      max-width: 760px;
+      max-width: 720px;
     }
 
-    .eyebrow {
+    .hero-logo {
+      display: none;
+    }
+
+    .hero-tag {
       display: inline-flex;
+
       align-items: center;
-      gap: 8px;
+
+      gap: 9px;
 
       margin-bottom: 24px;
 
-      padding: 8px 14px;
+      padding:
+        8px
+        14px;
 
-      border: 1px solid rgba(140, 121, 105, 0.18);
+      border:
+        1px solid rgba(
+          255,
+          255,
+          255,
+          0.15
+        );
+
       border-radius: 999px;
 
-      background: rgba(255, 255, 255, 0.7);
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.07
+        );
 
-      color: var(--primary-dark);
+      color: #A9D8FF;
 
-      font-size: 0.85rem;
-      font-weight: 700;
+      font-size: 0.78rem;
 
-      letter-spacing: 0.06em;
+      font-weight: bold;
+
       text-transform: uppercase;
+
+      letter-spacing: 0.11em;
     }
 
     .hero h1 {
-      margin-bottom: 24px;
+      max-width: 780px;
 
-      max-width: 830px;
+      margin-bottom: 26px;
 
-      font-size: clamp(3rem, 8vw, 6rem);
+      font-size:
+        clamp(
+          3.2rem,
+          7vw,
+          6rem
+        );
+
       line-height: 0.98;
 
-      letter-spacing: -0.06em;
+      letter-spacing: -0.045em;
     }
 
     .hero h1 span {
-      color: var(--primary);
+      color: #20A2FF;
     }
 
-    .hero-description {
-      max-width: 650px;
+    .hero p {
+      max-width: 640px;
 
-      color: var(--muted);
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.78
+        );
 
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      font-size: 1.12rem;
     }
 
-    .hero-buttons {
+    .hero-actions {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 14px;
 
-      margin-top: 38px;
+      margin-top: 36px;
     }
 
     .button {
-      min-height: 52px;
+      min-height: 54px;
 
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
 
       gap: 10px;
 
-      padding: 0 24px;
+      padding:
+        0
+        25px;
 
       border-radius: 14px;
 
-      font-weight: 750;
+      letter-spacing: 0.02em;
 
       transition:
         transform 0.2s ease,
@@ -301,74 +464,225 @@
     }
 
     .button:hover {
-      transform: translateY(-2px);
+      transform:
+        translateY(-2px);
     }
 
     .button-primary {
-      background: var(--primary);
+      background: var(--blue);
+
       color: white;
 
-      box-shadow: 0 12px 30px rgba(101, 85, 72, 0.2);
+      box-shadow:
+        0 15px 34px
+        rgba(
+          0,
+          114,
+          206,
+          0.3
+        );
     }
 
     .button-primary:hover {
-      background: var(--primary-dark);
+      background: #0087F2;
     }
 
-    .button-secondary {
-      border: 1px solid var(--border);
+    .button-outline {
+      border:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.25
+        );
 
-      background: rgba(255, 255, 255, 0.75);
-      color: var(--text);
+      color: white;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.04
+        );
     }
 
-    .button-secondary:hover {
-      background: white;
-      box-shadow: var(--shadow);
+    .button-outline:hover {
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.1
+        );
     }
 
-    /* =========================
+
+    /* =========================================================
+       ARTE DO HERO
+    ========================================================= */
+
+    .hero-art {
+      position: relative;
+
+      min-height: 390px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+    }
+
+    .hero-circle {
+      width: 360px;
+
+      height: 360px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 50px;
+
+      border:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.12
+        );
+
+      border-radius: 50%;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.04
+        );
+
+      box-shadow:
+        inset
+        0 0 80px
+        rgba(
+          0,
+          114,
+          206,
+          0.11
+        );
+    }
+
+    .hero-circle::before {
+      content: "";
+
+      position: absolute;
+
+      width: 280px;
+
+      height: 280px;
+
+      border:
+        1px solid
+        rgba(
+          0,
+          114,
+          206,
+          0.65
+        );
+
+      border-radius: 50%;
+    }
+
+    .hero-symbol {
+      position: relative;
+
+      z-index: 2;
+
+      color: white;
+
+      font-family:
+        Georgia,
+        serif;
+
+      font-size: 9rem;
+
+      line-height: 1;
+
+      opacity: 0.95;
+    }
+
+    .hero-small-note {
+      position: absolute;
+
+      right: 10px;
+
+      top: 50px;
+
+      color: var(--blue);
+
+      font-size: 4rem;
+    }
+
+
+    /* =========================================================
        SEÇÕES
-    ========================= */
+    ========================================================= */
 
     section {
-      padding: 92px 0;
+      padding:
+        95px
+        0;
     }
 
     .section-heading {
       max-width: 710px;
+
       margin-bottom: 48px;
     }
 
-    .section-kicker {
-      margin-bottom: 10px;
+    .section-label {
+      margin-bottom: 12px;
 
-      color: var(--primary);
+      color: var(--blue);
 
-      font-size: 0.82rem;
-      font-weight: 800;
+      font-size: 0.78rem;
 
-      letter-spacing: 0.12em;
       text-transform: uppercase;
+
+      letter-spacing: 0.14em;
     }
 
     .section-heading h2 {
-      margin-bottom: 16px;
+      margin-bottom: 18px;
 
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      line-height: 1.05;
+      font-size:
+        clamp(
+          2.3rem,
+          5vw,
+          3.8rem
+        );
 
-      letter-spacing: -0.045em;
+      line-height: 1.04;
+
+      letter-spacing: -0.035em;
     }
 
     .section-heading p {
-      color: var(--muted);
+      color: var(--text-light);
+
       font-size: 1.06rem;
     }
 
-    /* =========================
+
+    /* =========================================================
        SOBRE
-    ========================= */
+    ========================================================= */
 
     .about {
       background: white;
@@ -376,140 +690,343 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
 
-      gap: 26px;
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 28px;
     }
 
-    .info-card {
+    .about-card {
       position: relative;
 
       overflow: hidden;
 
-      min-height: 350px;
+      min-height: 340px;
 
-      padding: 38px;
+      padding: 40px;
 
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border:
+        1px solid
+        var(--border);
 
-      background: var(--surface);
+      border-radius:
+        var(--radius);
 
-      box-shadow: var(--shadow);
+      background:
+        white;
+
+      box-shadow:
+        var(--shadow);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
-    .info-card::after {
+    .about-card:hover {
+      transform:
+        translateY(-5px);
+
+      box-shadow:
+        0 25px 65px
+        rgba(
+          0,
+          34,
+          62,
+          0.16
+        );
+    }
+
+    .about-card::after {
       content: "";
 
       position: absolute;
-      right: -80px;
-      bottom: -80px;
 
-      width: 210px;
-      height: 210px;
+      width: 190px;
+
+      height: 190px;
+
+      right: -90px;
+
+      bottom: -90px;
 
       border-radius: 50%;
 
-      background: rgba(201, 173, 143, 0.12);
+      background:
+        rgba(
+          0,
+          114,
+          206,
+          0.07
+        );
     }
 
     .card-icon {
       width: 62px;
+
       height: 62px;
 
       display: grid;
+
       place-items: center;
 
-      margin-bottom: 28px;
+      margin-bottom: 27px;
 
       border-radius: 18px;
 
-      background: var(--surface-soft);
+      background:
+        var(--background-soft);
+
+      color: var(--blue);
 
       font-size: 30px;
     }
 
-    .info-card h3 {
+    .about-card h3 {
       position: relative;
+
       z-index: 2;
 
-      margin-bottom: 15px;
+      margin-bottom: 16px;
 
-      font-size: 1.65rem;
-
-      letter-spacing: -0.03em;
+      font-size: 1.7rem;
     }
 
-    .info-card p {
+    .about-card p {
       position: relative;
+
       z-index: 2;
 
-      color: var(--muted);
-      font-size: 1rem;
+      color: var(--text-light);
     }
 
-    /* =========================
-       FRASE
-    ========================= */
 
-    .message-section {
-      padding: 72px 0;
+    /* =========================================================
+       SALMO
+    ========================================================= */
 
-      background: var(--primary-dark);
+    .verse-section {
+      position: relative;
+
+      overflow: hidden;
+
+      padding:
+        80px
+        0;
+
+      background:
+        var(--navy);
+
       color: white;
     }
 
-    .message {
-      max-width: 850px;
+    .verse-section::after {
+      content: "♪";
+
+      position: absolute;
+
+      right: 3%;
+
+      top: -50px;
+
+      color:
+        rgba(
+          0,
+          114,
+          206,
+          0.13
+        );
+
+      font-size: 17rem;
+    }
+
+    .verse {
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 900px;
+
       margin-inline: auto;
 
       text-align: center;
     }
 
-    .message-symbol {
+    .verse-icon {
+      margin-bottom: 15px;
+
+      color: var(--blue);
+
+      font-size: 2.4rem;
+    }
+
+    .verse blockquote {
+      margin-bottom: 15px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(
+          1.7rem,
+          4vw,
+          2.7rem
+        );
+
+      line-height: 1.35;
+    }
+
+    .verse small {
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.58
+        );
+    }
+
+
+    /* =========================================================
+       FOTO
+    ========================================================= */
+
+    .photo-section {
+      background:
+        var(--background-soft);
+    }
+
+    .photo-box {
+      min-height: 440px;
+
+      display: grid;
+
+      place-items: center;
+
+      padding: 40px;
+
+      border:
+        1px dashed
+        rgba(
+          0,
+          114,
+          206,
+          0.28
+        );
+
+      border-radius:
+        var(--radius);
+
+      background:
+        linear-gradient(
+          135deg,
+          #FFFFFF,
+          #EDF7FD
+        );
+
+      text-align: center;
+    }
+
+    .photo-placeholder {
+      max-width: 520px;
+    }
+
+    .photo-placeholder span {
+      display: block;
+
       margin-bottom: 18px;
 
-      color: var(--accent);
-      font-size: 2.3rem;
+      color: var(--blue);
+
+      font-size: 3rem;
     }
 
-    .message blockquote {
-      font-family: Georgia, "Times New Roman", serif;
+    .photo-placeholder h3 {
+      margin-bottom: 10px;
 
-      font-size: clamp(1.7rem, 4vw, 2.8rem);
-      line-height: 1.3;
-
-      letter-spacing: -0.025em;
+      font-size: 1.8rem;
     }
 
-    /* =========================
+    .photo-placeholder p {
+      color: var(--text-light);
+    }
+
+
+    /*
+      QUANDO ENVIAR SUA FOTO COMO:
+
+      assets/ministerio.jpg
+
+      substitua o conteúdo de .photo-box por:
+
+      <img
+        src="assets/ministerio.jpg"
+        alt="Ministério Templo Vivo"
+      >
+
+      e este CSS já deixará bonito.
+    */
+
+    .photo-box > img {
+      width: 100%;
+
+      height: 100%;
+
+      max-height: 620px;
+
+      object-fit: cover;
+
+      border-radius:
+        var(--radius);
+    }
+
+
+    /* =========================================================
        VÍDEO
-    ========================= */
+    ========================================================= */
 
     .video-section {
-      background: var(--surface-soft);
+      background: white;
     }
 
     .video-card {
       overflow: hidden;
 
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+      aspect-ratio:
+        16 / 9;
 
-      background: #181818;
+      border-radius:
+        var(--radius);
 
-      box-shadow: var(--shadow);
+      background:
+        var(--navy);
 
-      aspect-ratio: 16 / 9;
+      box-shadow:
+        var(--shadow);
+    }
+
+    .video-card iframe {
+      width: 100%;
+
+      height: 100%;
+
+      border: 0;
     }
 
     .video-placeholder {
       width: 100%;
+
       height: 100%;
 
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
+
       justify-content: center;
 
       gap: 18px;
@@ -517,352 +1034,618 @@
       padding: 30px;
 
       color: white;
+
       text-align: center;
 
       background:
         radial-gradient(
-          circle at 20% 20%,
-          rgba(201, 173, 143, 0.22),
-          transparent 35%
+          circle at 50% 50%,
+          rgba(
+            0,
+            114,
+            206,
+            0.4
+          ),
+          transparent 40%
         ),
-        linear-gradient(145deg, #26211d, #111);
+        var(--navy);
     }
 
-    .video-placeholder .play {
+    .play {
       width: 72px;
+
       height: 72px;
 
       display: grid;
+
       place-items: center;
 
       border-radius: 50%;
 
-      background: white;
-      color: var(--primary-dark);
+      background: var(--blue);
 
-      font-size: 27px;
+      font-size: 25px;
     }
 
     .video-placeholder h3 {
-      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-size: 1.7rem;
     }
 
     .video-placeholder p {
-      max-width: 570px;
-      color: rgba(255, 255, 255, 0.72);
+      max-width: 560px;
+
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.7
+        );
     }
 
-    /* =========================
+
+    /* =========================================================
        CONTATO
-    ========================= */
+    ========================================================= */
 
     .contact-section {
-      background: white;
+      background:
+        var(--background-soft);
     }
 
-    .contact-box {
+    .contact-card {
+      position: relative;
+
+      overflow: hidden;
+
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
+
+      grid-template-columns:
+        1.2fr
+        0.8fr;
+
       align-items: center;
 
-      gap: 45px;
+      gap: 55px;
 
-      padding: 56px;
+      padding: 60px;
 
-      border-radius: 30px;
+      border-radius: 32px;
 
       background:
-        radial-gradient(
-          circle at 90% 10%,
-          rgba(255, 255, 255, 0.12),
-          transparent 30%
-        ),
-        var(--primary-dark);
+        linear-gradient(
+          135deg,
+          var(--navy),
+          #003A64
+        );
 
       color: white;
 
-      box-shadow: 0 22px 60px rgba(65, 52, 43, 0.2);
+      box-shadow:
+        0 25px 65px
+        rgba(
+          0,
+          34,
+          62,
+          0.2
+        );
     }
 
-    .contact-box h2 {
-      margin-bottom: 16px;
+    .contact-card::after {
+      content: "";
 
-      font-size: clamp(2rem, 5vw, 3.4rem);
+      position: absolute;
+
+      width: 320px;
+
+      height: 320px;
+
+      right: -180px;
+
+      top: -170px;
+
+      border:
+        1px solid
+        rgba(
+          0,
+          114,
+          206,
+          0.65
+        );
+
+      border-radius: 50%;
+    }
+
+    .contact-content {
+      position: relative;
+
+      z-index: 2;
+    }
+
+    .contact-card h2 {
+      margin-bottom: 17px;
+
+      font-size:
+        clamp(
+          2rem,
+          5vw,
+          3.5rem
+        );
+
       line-height: 1.05;
-
-      letter-spacing: -0.045em;
     }
 
-    .contact-box p {
-      max-width: 630px;
+    .contact-card p {
+      max-width: 610px;
 
-      color: rgba(255, 255, 255, 0.76);
-      font-size: 1.05rem;
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.72
+        );
     }
 
     .contact-actions {
+      position: relative;
+
+      z-index: 2;
+
       display: flex;
+
       flex-direction: column;
-      gap: 12px;
+
+      gap: 13px;
     }
 
-    .whatsapp-button {
+    .whatsapp {
       min-height: 58px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       gap: 10px;
 
-      padding: 0 22px;
+      padding:
+        0
+        24px;
 
-      border-radius: 16px;
+      border-radius: 15px;
 
-      background: var(--whatsapp);
-      color: #082c16;
+      background:
+        var(--whatsapp);
 
-      font-weight: 850;
+      color: #082C16;
+
+      font-weight: 800;
 
       transition:
         transform 0.2s ease,
         background 0.2s ease;
     }
 
-    .whatsapp-button:hover {
-      transform: translateY(-2px);
-      background: #39df78;
+    .whatsapp:hover {
+      transform:
+        translateY(-2px);
+
+      background: #40DE7C;
     }
 
-    .social-links {
+    .socials {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns:
+        1fr
+        1fr;
 
       gap: 12px;
     }
 
-    .social-link {
-      min-height: 48px;
+    .social {
+      min-height: 50px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
-      border: 1px solid rgba(255, 255, 255, 0.17);
+      border:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.16
+        );
+
       border-radius: 14px;
 
-      color: rgba(255, 255, 255, 0.9);
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.92
+        );
 
-      font-size: 0.9rem;
-      font-weight: 700;
+      font-weight: bold;
 
-      transition: background 0.2s ease;
+      transition:
+        background 0.2s ease;
     }
 
-    .social-link:hover {
-      background: rgba(255, 255, 255, 0.08);
+    .social:hover {
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.08
+        );
     }
 
-    /* =========================
+
+    /* =========================================================
        FOOTER
-    ========================= */
+    ========================================================= */
 
     footer {
-      padding: 38px 0;
+      padding:
+        42px
+        0;
 
-      border-top: 1px solid var(--border);
+      background:
+        var(--navy);
 
-      background: var(--bg);
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.6
+        );
     }
 
     .footer-content {
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
-      gap: 30px;
+      gap: 25px;
 
-      color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.87rem;
     }
 
-    .footer-brand {
-      color: var(--text);
-      font-weight: 800;
+    .footer-logo {
+      display: flex;
+
+      align-items: center;
+
+      gap: 15px;
     }
 
-    /* =========================
-       RESPONSIVO
-    ========================= */
+    .footer-logo img {
+      width: 110px;
 
-    @media (max-width: 800px) {
-      nav a:not(.nav-contact) {
+      padding: 7px;
+
+      border-radius: 8px;
+
+      background: white;
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (
+      max-width: 850px
+    ) {
+
+      nav a:not(.nav-button) {
         display: none;
       }
 
       .navbar {
-        min-height: 68px;
+        min-height: 72px;
       }
 
-      .brand-text small {
-        display: none;
+      .logo img {
+        width: 130px;
       }
 
       .hero {
-        padding: 78px 0 68px;
+        min-height: auto;
+
+        padding:
+          80px
+          0;
       }
 
-      .hero h1 {
-        font-size: clamp(3rem, 16vw, 4.6rem);
+      .hero-grid {
+        grid-template-columns:
+          1fr;
+
+        gap: 45px;
       }
 
-      section {
-        padding: 68px 0;
+      .hero-art {
+        display: none;
       }
 
       .about-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
       }
 
-      .info-card {
-        min-height: auto;
-        padding: 30px;
+      .contact-card {
+        grid-template-columns:
+          1fr;
+
+        padding:
+          42px
+          30px;
       }
 
-      .contact-box {
-        grid-template-columns: 1fr;
-
-        padding: 38px 26px;
-      }
-
-      .contact-actions {
-        width: 100%;
+      section {
+        padding:
+          70px
+          0;
       }
 
       .footer-content {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction:
+          column;
 
-        gap: 8px;
+        align-items:
+          flex-start;
       }
     }
 
-    @media (max-width: 520px) {
+
+    @media (
+      max-width: 520px
+    ) {
+
       .container {
-        width: min(calc(100% - 28px), var(--container));
+        width:
+          calc(
+            100% - 28px
+          );
       }
 
-      .brand-mark {
-        width: 40px;
-        height: 40px;
+      .logo img {
+        width: 115px;
       }
 
-      .brand-text strong {
-        font-size: 0.92rem;
+      .nav-button {
+        padding:
+          9px
+          13px;
+
+        font-size: 0.76rem;
       }
 
-      .nav-contact {
-        padding: 9px 13px;
-        font-size: 0.8rem;
+      .hero h1 {
+        font-size:
+          clamp(
+            3rem,
+            16vw,
+            4.4rem
+          );
       }
 
-      .hero-buttons {
-        flex-direction: column;
+      .hero-actions {
+        flex-direction:
+          column;
       }
 
       .button {
         width: 100%;
       }
 
-      .social-links {
-        grid-template-columns: 1fr;
+      .about-card {
+        padding: 30px;
+      }
+
+      .socials {
+        grid-template-columns:
+          1fr;
+      }
+
+      .contact-card {
+        padding:
+          35px
+          23px;
       }
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- ======================================
+
+  <!-- =========================================================
        CABEÇALHO
-  ======================================= -->
+  ========================================================== -->
 
   <header>
+
     <div class="container navbar">
 
-      <a href="#inicio" class="brand">
-        <div class="brand-mark">♪</div>
+      <a
+        href="#inicio"
+        class="logo"
+        aria-label="Ministério Templo Vivo"
+      >
 
-        <div class="brand-text">
-          <small>Ministério de Música</small>
-          <strong>Templo Vivo</strong>
-        </div>
+        <img
+          src="assets/logo.png"
+          alt="Ministério Templo Vivo"
+        >
+
       </a>
 
+
       <nav aria-label="Navegação principal">
-        <a href="#sobre">Sobre nós</a>
-        <a href="#video">Vídeos</a>
-        <a href="#contato" class="nav-contact">Contato</a>
+
+        <a href="#sobre">
+          Sobre
+        </a>
+
+        <a href="#ministerio">
+          Ministério
+        </a>
+
+        <a href="#video">
+          Vídeos
+        </a>
+
+        <a
+          href="#contato"
+          class="nav-button"
+        >
+          Contato
+        </a>
+
       </nav>
 
     </div>
+
   </header>
 
 
-  <!-- ======================================
-       INÍCIO
-  ======================================= -->
+
+  <!-- =========================================================
+       CONTEÚDO
+  ========================================================== -->
 
   <main>
 
-    <section class="hero" id="inicio">
+
+    <!-- =======================================================
+         HERO
+    ======================================================== -->
+
+    <section
+      class="hero"
+      id="inicio"
+    >
+
       <div class="container">
 
-        <div class="hero-content">
+        <div class="hero-grid">
 
-          <div class="eyebrow">
-            ✝ Ministério de Música Católica
+
+          <div class="hero-content">
+
+            <div class="hero-tag">
+              ✝ Ministério de Música Católica
+            </div>
+
+
+            <h1>
+
+              Música que
+              nos aproxima
+              de <span>Deus.</span>
+
+            </h1>
+
+
+            <p>
+
+              Somos o Ministério Templo Vivo.
+
+              Colocamos nossos dons
+              a serviço da evangelização,
+              levando a Palavra de Deus
+              através da música,
+              da oração
+              e da alegria de servir.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+              <a
+                href="#contato"
+                class="button button-primary"
+              >
+
+                Fale conosco
+
+                <span>→</span>
+
+              </a>
+
+
+              <a
+                href="#sobre"
+                class="button button-outline"
+              >
+
+                Conheça o Ministério
+
+              </a>
+
+            </div>
+
           </div>
 
-          <h1>
-            Música que nos aproxima de <span>Deus.</span>
-          </h1>
 
-          <p class="hero-description">
-            Somos o Ministério Templo Vivo. Colocamos nossos dons a serviço
-            da evangelização, levando a Palavra de Deus através da música,
-            da oração e da alegria de servir.
-          </p>
 
-          <div class="hero-buttons">
+          <div class="hero-art">
 
-            <a href="#contato" class="button button-primary">
-              Fale conosco
-              <span>→</span>
-            </a>
+            <div class="hero-circle">
 
-            <a href="#sobre" class="button button-secondary">
-              Conheça o Ministério
-            </a>
+              <div class="hero-symbol">
+                ♫
+              </div>
+
+            </div>
+
+            <div class="hero-small-note">
+              ♪
+            </div>
 
           </div>
+
 
         </div>
 
       </div>
+
     </section>
 
 
-    <!-- ======================================
-         SOBRE O MINISTÉRIO
-    ======================================= -->
 
-    <section class="about" id="sobre">
+    <!-- =======================================================
+         SOBRE
+    ======================================================== -->
+
+    <section
+      class="about"
+      id="sobre"
+    >
+
       <div class="container">
+
 
         <div class="section-heading">
 
-          <div class="section-kicker">
+          <div class="section-label">
             Sobre o Ministério
           </div>
 
@@ -871,74 +1654,121 @@
           </h2>
 
           <p>
-            A música é mais do que parte de uma celebração. Para nós,
-            ela é instrumento de oração, evangelização e encontro com Deus.
+
+            Para nós,
+            a música é mais do que parte
+            de uma celebração.
+
+            É instrumento de oração,
+            evangelização
+            e encontro com Deus.
+
           </p>
 
         </div>
 
 
+
         <div class="about-grid">
 
-          <article class="info-card">
+
+          <article class="about-card">
 
             <div class="card-icon">
               ✝
             </div>
 
-            <h3>Nossa Missão</h3>
+            <h3>
+              Nossa Missão
+            </h3>
 
             <p>
-              Levar a Palavra de Deus através da música, servindo à Igreja
-              com fé, alegria e dedicação. Buscamos fazer de cada canção
-              uma forma de oração, ajudando as pessoas a se aproximarem
+
+              Levar a Palavra de Deus
+              através da música,
+              servindo à Igreja
+              com fé,
+              alegria
+              e dedicação.
+
+              Buscamos fazer
+              de cada canção
+              uma forma de oração,
+              ajudando as pessoas
+              a se aproximarem
               de Cristo.
+
             </p>
 
           </article>
 
 
-          <article class="info-card">
+
+          <article class="about-card">
 
             <div class="card-icon">
               ♫
             </div>
 
-            <h3>Nossos Músicos</h3>
+            <h3>
+              Nossos Músicos
+            </h3>
 
             <p>
-              Somos um ministério formado por músicos e cantores que
-              colocam seus dons a serviço de Deus. Mais do que tocar e
-              cantar, queremos evangelizar e contribuir para que cada
-              celebração seja um verdadeiro encontro com Cristo.
+
+              Somos um ministério
+              formado por músicos
+              e cantores
+              que colocam seus dons
+              a serviço de Deus.
+
+              Mais do que tocar
+              e cantar,
+              queremos evangelizar
+              e contribuir
+              para que cada celebração
+              seja um verdadeiro
+              encontro com Cristo.
+
             </p>
 
           </article>
 
+
         </div>
 
       </div>
+
     </section>
 
 
-    <!-- ======================================
-         FRASE
-    ======================================= -->
 
-    <section class="message-section">
+    <!-- =======================================================
+         SALMO
+    ======================================================== -->
+
+    <section class="verse-section">
 
       <div class="container">
 
-        <div class="message">
+        <div class="verse">
 
-          <div class="message-symbol">
+          <div class="verse-icon">
             ♪
           </div>
 
           <blockquote>
-            “Cantai ao Senhor um cântico novo,
-            cantai ao Senhor, terra inteira.”
+
+            “Cantai ao Senhor
+            um cântico novo,
+            cantai ao Senhor,
+            terra inteira.”
+
           </blockquote>
+
+          <small>
+            Salmo 96
+          </small>
 
         </div>
 
@@ -947,17 +1777,105 @@
     </section>
 
 
-    <!-- ======================================
-         VÍDEO
-    ======================================= -->
 
-    <section class="video-section" id="video">
+    <!-- =======================================================
+         FOTO DO MINISTÉRIO
+    ======================================================== -->
+
+    <section
+      class="photo-section"
+      id="ministerio"
+    >
 
       <div class="container">
 
+
         <div class="section-heading">
 
-          <div class="section-kicker">
+          <div class="section-label">
+            Templo Vivo
+          </div>
+
+          <h2>
+            Uma família a serviço da evangelização.
+          </h2>
+
+          <p>
+
+            Somos chamados
+            a colocar nossos dons
+            a serviço de Deus
+            e da Igreja.
+
+          </p>
+
+        </div>
+
+
+
+        <div class="photo-box">
+
+          <!--
+            QUANDO VOCÊ ENVIAR
+            UMA FOTO PARA:
+
+            assets/ministerio.jpg
+
+            apague o bloco
+            photo-placeholder abaixo
+
+            e coloque:
+
+            <img
+              src="assets/ministerio.jpg"
+              alt="Ministério Templo Vivo"
+            >
+          -->
+
+
+          <div class="photo-placeholder">
+
+            <span>
+              ♫
+            </span>
+
+            <h3>
+              Foto do Ministério
+            </h3>
+
+            <p>
+
+              Aqui colocaremos
+              uma foto oficial
+              do Ministério Templo Vivo.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         VÍDEO
+    ======================================================== -->
+
+    <section
+      class="video-section"
+      id="video"
+    >
+
+      <div class="container">
+
+
+        <div class="section-heading">
+
+          <div class="section-label">
             Nosso trabalho
           </div>
 
@@ -966,19 +1884,38 @@
           </h2>
 
           <p>
-            Conheça um pouco mais do Ministério Templo Vivo
-            através de nossas músicas e celebrações.
+
+            Conheça um pouco mais
+            do Ministério Templo Vivo
+            através de nossas músicas,
+            celebrações
+            e momentos de oração.
+
           </p>
 
         </div>
 
 
-        <!--
-          DEPOIS VAMOS SUBSTITUIR ESTA ÁREA
-          POR UM VÍDEO REAL DO YOUTUBE.
-        -->
 
         <div class="video-card">
+
+
+          <!--
+
+            QUANDO TIVERMOS
+            O LINK DO YOUTUBE
+
+            vamos substituir
+            o bloco abaixo por:
+
+            <iframe
+              src="https://www.youtube.com/embed/ID_DO_VIDEO"
+              title="Ministério Templo Vivo"
+              allowfullscreen
+            ></iframe>
+
+          -->
+
 
           <div class="video-placeholder">
 
@@ -986,14 +1923,22 @@
               ▶
             </div>
 
-            <h3>Ministério Templo Vivo</h3>
+            <h3>
+              Ministério Templo Vivo
+            </h3>
 
             <p>
-              Aqui vamos colocar um vídeo do Ministério diretamente
+
+              Aqui colocaremos
+              um vídeo oficial
+              do Ministério
+              diretamente
               do YouTube.
+
             </p>
 
           </div>
+
 
         </div>
 
@@ -1002,19 +1947,30 @@
     </section>
 
 
-    <!-- ======================================
-         CONTATO
-    ======================================= -->
 
-    <section class="contact-section" id="contato">
+    <!-- =======================================================
+         CONTATO
+    ======================================================== -->
+
+    <section
+      class="contact-section"
+      id="contato"
+    >
 
       <div class="container">
 
-        <div class="contact-box">
 
-          <div>
+        <div class="contact-card">
 
-            <div class="section-kicker" style="color: #d8c4ae">
+
+          <div class="contact-content">
+
+            <div
+              class="section-label"
+              style="
+                color: #58B8FF;
+              "
+            >
               Contato
             </div>
 
@@ -1023,59 +1979,88 @@
             </h2>
 
             <p>
-              Quer conhecer melhor o Ministério, falar conosco ou nos
-              convidar para uma celebração ou evento? Entre em contato.
-              Será uma alegria conversar com você.
+
+              Quer conhecer melhor
+              o Ministério,
+              falar conosco
+              ou nos convidar
+              para uma celebração
+              ou evento?
+
+              Entre em contato.
+
+              Será uma alegria
+              conversar com você.
+
             </p>
 
           </div>
 
 
+
           <div class="contact-actions">
 
-            <!--
-              IMPORTANTE:
-              troque 5511999999999 pelo número real do WhatsApp.
 
-              Exemplo:
-              55 + DDD + número
+            <!--
+              TROCAR DEPOIS
+              PELO WHATSAPP REAL
             -->
 
             <a
-              class="whatsapp-button"
               href="https://wa.me/5511999999999?text=Olá%20Ministério%20Templo%20Vivo!"
               target="_blank"
               rel="noopener noreferrer"
+              class="whatsapp"
             >
+
               ☎ Fale pelo WhatsApp
+
             </a>
 
 
-            <div class="social-links">
+
+            <div class="socials">
+
 
               <!--
-                Depois substituiremos # pelos links reais.
+                TROCAR #
+                PELO INSTAGRAM REAL
               -->
 
               <a
                 href="#"
-                class="social-link"
-                aria-label="Instagram do Ministério Templo Vivo"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social"
               >
+
                 Instagram
+
               </a>
+
+
+
+              <!--
+                TROCAR #
+                PELO YOUTUBE REAL
+              -->
 
               <a
                 href="#"
-                class="social-link"
-                aria-label="YouTube do Ministério Templo Vivo"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social"
               >
+
                 YouTube
+
               </a>
+
 
             </div>
 
           </div>
+
 
         </div>
 
@@ -1083,37 +2068,60 @@
 
     </section>
 
+
   </main>
 
 
-  <!-- ======================================
+
+  <!-- =========================================================
        RODAPÉ
-  ======================================= -->
+  ========================================================== -->
 
   <footer>
 
     <div class="container footer-content">
 
-      <div>
-        <span class="footer-brand">
-          Ministério Templo Vivo
-        </span>
-        · Música Católica
+
+      <div class="footer-logo">
+
+        <img
+          src="assets/logo.png"
+          alt="Ministério Templo Vivo"
+        >
+
       </div>
 
+
       <div>
-        © <span id="ano"></span> · Todos os direitos reservados
+
+        ©
+        <span id="ano"></span>
+
+        Ministério Templo Vivo
+
       </div>
+
 
     </div>
 
   </footer>
 
 
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================== -->
+
   <script>
-    document.getElementById("ano").textContent =
-      new Date().getFullYear();
+
+    document
+      .getElementById("ano")
+      .textContent =
+      new Date()
+        .getFullYear();
+
   </script>
+
 
 </body>
 </html>
