@@ -1,12 +1,1119 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ministério Templo Vivo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ministério Templo Vivo | Música Católica</title>
+
+  <meta
+    name="description"
+    content="Ministério Templo Vivo. Evangelizando e levando a Palavra de Deus através da música."
+  />
+
+  <meta name="theme-color" content="#6f6258" />
+
+  <style>
+    :root {
+      --bg: #fbfaf8;
+      --surface: #ffffff;
+      --surface-soft: #f4f0eb;
+
+      --text: #252525;
+      --muted: #68635f;
+
+      --primary: #8c7969;
+      --primary-dark: #655548;
+      --accent: #c9ad8f;
+
+      --whatsapp: #25d366;
+      --whatsapp-dark: #1da851;
+
+      --border: rgba(101, 85, 72, 0.14);
+      --shadow: 0 18px 50px rgba(65, 52, 43, 0.09);
+
+      --radius: 24px;
+      --container: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(251, 250, 248, 0.92);
+      backdrop-filter: blur(16px);
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 76px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: var(--primary);
+      color: white;
+
+      font-size: 23px;
+
+      box-shadow: 0 8px 20px rgba(101, 85, 72, 0.2);
+    }
+
+    .brand-text small {
+      display: block;
+
+      color: var(--muted);
+      font-size: 0.69rem;
+      font-weight: 600;
+
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1.03rem;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: #4a4642;
+
+      transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .nav-contact {
+      padding: 10px 18px;
+
+      border-radius: 999px;
+
+      background: var(--primary);
+      color: white !important;
+    }
+
+    .nav-contact:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 105px 0 90px;
+
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(201, 173, 143, 0.3),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 90% 80%,
+          rgba(140, 121, 105, 0.18),
+          transparent 38%
+        ),
+        linear-gradient(180deg, #fff 0%, #f8f4ef 100%);
+    }
+
+    .hero::after {
+      content: "♪";
+
+      position: absolute;
+      right: 7%;
+      top: 8%;
+
+      font-size: clamp(180px, 25vw, 360px);
+      font-weight: 900;
+
+      color: rgba(140, 121, 105, 0.045);
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      margin-bottom: 24px;
+
+      padding: 8px 14px;
+
+      border: 1px solid rgba(140, 121, 105, 0.18);
+      border-radius: 999px;
+
+      background: rgba(255, 255, 255, 0.7);
+
+      color: var(--primary-dark);
+
+      font-size: 0.85rem;
+      font-weight: 700;
+
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin-bottom: 24px;
+
+      max-width: 830px;
+
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 0.98;
+
+      letter-spacing: -0.06em;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-description {
+      max-width: 650px;
+
+      color: var(--muted);
+
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+
+      margin-top: 38px;
+    }
+
+    .button {
+      min-height: 52px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      padding: 0 24px;
+
+      border-radius: 14px;
+
+      font-weight: 750;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--primary);
+      color: white;
+
+      box-shadow: 0 12px 30px rgba(101, 85, 72, 0.2);
+    }
+
+    .button-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .button-secondary {
+      border: 1px solid var(--border);
+
+      background: rgba(255, 255, 255, 0.75);
+      color: var(--text);
+    }
+
+    .button-secondary:hover {
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    /* =========================
+       SEÇÕES
+    ========================= */
+
+    section {
+      padding: 92px 0;
+    }
+
+    .section-heading {
+      max-width: 710px;
+      margin-bottom: 48px;
+    }
+
+    .section-kicker {
+      margin-bottom: 10px;
+
+      color: var(--primary);
+
+      font-size: 0.82rem;
+      font-weight: 800;
+
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 16px;
+
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.05;
+
+      letter-spacing: -0.045em;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+
+    /* =========================
+       SOBRE
+    ========================= */
+
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 26px;
+    }
+
+    .info-card {
+      position: relative;
+
+      overflow: hidden;
+
+      min-height: 350px;
+
+      padding: 38px;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      background: var(--surface);
+
+      box-shadow: var(--shadow);
+    }
+
+    .info-card::after {
+      content: "";
+
+      position: absolute;
+      right: -80px;
+      bottom: -80px;
+
+      width: 210px;
+      height: 210px;
+
+      border-radius: 50%;
+
+      background: rgba(201, 173, 143, 0.12);
+    }
+
+    .card-icon {
+      width: 62px;
+      height: 62px;
+
+      display: grid;
+      place-items: center;
+
+      margin-bottom: 28px;
+
+      border-radius: 18px;
+
+      background: var(--surface-soft);
+
+      font-size: 30px;
+    }
+
+    .info-card h3 {
+      position: relative;
+      z-index: 2;
+
+      margin-bottom: 15px;
+
+      font-size: 1.65rem;
+
+      letter-spacing: -0.03em;
+    }
+
+    .info-card p {
+      position: relative;
+      z-index: 2;
+
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* =========================
+       FRASE
+    ========================= */
+
+    .message-section {
+      padding: 72px 0;
+
+      background: var(--primary-dark);
+      color: white;
+    }
+
+    .message {
+      max-width: 850px;
+      margin-inline: auto;
+
+      text-align: center;
+    }
+
+    .message-symbol {
+      margin-bottom: 18px;
+
+      color: var(--accent);
+      font-size: 2.3rem;
+    }
+
+    .message blockquote {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      line-height: 1.3;
+
+      letter-spacing: -0.025em;
+    }
+
+    /* =========================
+       VÍDEO
+    ========================= */
+
+    .video-section {
+      background: var(--surface-soft);
+    }
+
+    .video-card {
+      overflow: hidden;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      background: #181818;
+
+      box-shadow: var(--shadow);
+
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      gap: 18px;
+
+      padding: 30px;
+
+      color: white;
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(201, 173, 143, 0.22),
+          transparent 35%
+        ),
+        linear-gradient(145deg, #26211d, #111);
+    }
+
+    .video-placeholder .play {
+      width: 72px;
+      height: 72px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: white;
+      color: var(--primary-dark);
+
+      font-size: 27px;
+    }
+
+    .video-placeholder h3 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+    }
+
+    .video-placeholder p {
+      max-width: 570px;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    /* =========================
+       CONTATO
+    ========================= */
+
+    .contact-section {
+      background: white;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      align-items: center;
+
+      gap: 45px;
+
+      padding: 56px;
+
+      border-radius: 30px;
+
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(255, 255, 255, 0.12),
+          transparent 30%
+        ),
+        var(--primary-dark);
+
+      color: white;
+
+      box-shadow: 0 22px 60px rgba(65, 52, 43, 0.2);
+    }
+
+    .contact-box h2 {
+      margin-bottom: 16px;
+
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.05;
+
+      letter-spacing: -0.045em;
+    }
+
+    .contact-box p {
+      max-width: 630px;
+
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 1.05rem;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .whatsapp-button {
+      min-height: 58px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      padding: 0 22px;
+
+      border-radius: 16px;
+
+      background: var(--whatsapp);
+      color: #082c16;
+
+      font-weight: 850;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .whatsapp-button:hover {
+      transform: translateY(-2px);
+      background: #39df78;
+    }
+
+    .social-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 12px;
+    }
+
+    .social-link {
+      min-height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid rgba(255, 255, 255, 0.17);
+      border-radius: 14px;
+
+      color: rgba(255, 255, 255, 0.9);
+
+      font-size: 0.9rem;
+      font-weight: 700;
+
+      transition: background 0.2s ease;
+    }
+
+    .social-link:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 38px 0;
+
+      border-top: 1px solid var(--border);
+
+      background: var(--bg);
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-brand {
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    /* =========================
+       RESPONSIVO
+    ========================= */
+
+    @media (max-width: 800px) {
+      nav a:not(.nav-contact) {
+        display: none;
+      }
+
+      .navbar {
+        min-height: 68px;
+      }
+
+      .brand-text small {
+        display: none;
+      }
+
+      .hero {
+        padding: 78px 0 68px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 16vw, 4.6rem);
+      }
+
+      section {
+        padding: 68px 0;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-card {
+        min-height: auto;
+        padding: 30px;
+      }
+
+      .contact-box {
+        grid-template-columns: 1fr;
+
+        padding: 38px 26px;
+      }
+
+      .contact-actions {
+        width: 100%;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(calc(100% - 28px), var(--container));
+      }
+
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+      }
+
+      .brand-text strong {
+        font-size: 0.92rem;
+      }
+
+      .nav-contact {
+        padding: 9px 13px;
+        font-size: 0.8rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .social-links {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Ministério Templo Vivo</h1>
-  <p>Site em construção.</p>
+
+  <!-- ======================================
+       CABEÇALHO
+  ======================================= -->
+
+  <header>
+    <div class="container navbar">
+
+      <a href="#inicio" class="brand">
+        <div class="brand-mark">♪</div>
+
+        <div class="brand-text">
+          <small>Ministério de Música</small>
+          <strong>Templo Vivo</strong>
+        </div>
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <a href="#sobre">Sobre nós</a>
+        <a href="#video">Vídeos</a>
+        <a href="#contato" class="nav-contact">Contato</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ======================================
+       INÍCIO
+  ======================================= -->
+
+  <main>
+
+    <section class="hero" id="inicio">
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            ✝ Ministério de Música Católica
+          </div>
+
+          <h1>
+            Música que nos aproxima de <span>Deus.</span>
+          </h1>
+
+          <p class="hero-description">
+            Somos o Ministério Templo Vivo. Colocamos nossos dons a serviço
+            da evangelização, levando a Palavra de Deus através da música,
+            da oração e da alegria de servir.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#contato" class="button button-primary">
+              Fale conosco
+              <span>→</span>
+            </a>
+
+            <a href="#sobre" class="button button-secondary">
+              Conheça o Ministério
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================
+         SOBRE O MINISTÉRIO
+    ======================================= -->
+
+    <section class="about" id="sobre">
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-kicker">
+            Sobre o Ministério
+          </div>
+
+          <h2>
+            Servir a Deus através da música.
+          </h2>
+
+          <p>
+            A música é mais do que parte de uma celebração. Para nós,
+            ela é instrumento de oração, evangelização e encontro com Deus.
+          </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+          <article class="info-card">
+
+            <div class="card-icon">
+              ✝
+            </div>
+
+            <h3>Nossa Missão</h3>
+
+            <p>
+              Levar a Palavra de Deus através da música, servindo à Igreja
+              com fé, alegria e dedicação. Buscamos fazer de cada canção
+              uma forma de oração, ajudando as pessoas a se aproximarem
+              de Cristo.
+            </p>
+
+          </article>
+
+
+          <article class="info-card">
+
+            <div class="card-icon">
+              ♫
+            </div>
+
+            <h3>Nossos Músicos</h3>
+
+            <p>
+              Somos um ministério formado por músicos e cantores que
+              colocam seus dons a serviço de Deus. Mais do que tocar e
+              cantar, queremos evangelizar e contribuir para que cada
+              celebração seja um verdadeiro encontro com Cristo.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================
+         FRASE
+    ======================================= -->
+
+    <section class="message-section">
+
+      <div class="container">
+
+        <div class="message">
+
+          <div class="message-symbol">
+            ♪
+          </div>
+
+          <blockquote>
+            “Cantai ao Senhor um cântico novo,
+            cantai ao Senhor, terra inteira.”
+          </blockquote>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         VÍDEO
+    ======================================= -->
+
+    <section class="video-section" id="video">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-kicker">
+            Nosso trabalho
+          </div>
+
+          <h2>
+            Ouça, assista e reze conosco.
+          </h2>
+
+          <p>
+            Conheça um pouco mais do Ministério Templo Vivo
+            através de nossas músicas e celebrações.
+          </p>
+
+        </div>
+
+
+        <!--
+          DEPOIS VAMOS SUBSTITUIR ESTA ÁREA
+          POR UM VÍDEO REAL DO YOUTUBE.
+        -->
+
+        <div class="video-card">
+
+          <div class="video-placeholder">
+
+            <div class="play">
+              ▶
+            </div>
+
+            <h3>Ministério Templo Vivo</h3>
+
+            <p>
+              Aqui vamos colocar um vídeo do Ministério diretamente
+              do YouTube.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         CONTATO
+    ======================================= -->
+
+    <section class="contact-section" id="contato">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div>
+
+            <div class="section-kicker" style="color: #d8c4ae">
+              Contato
+            </div>
+
+            <h2>
+              Fale com o Ministério Templo Vivo.
+            </h2>
+
+            <p>
+              Quer conhecer melhor o Ministério, falar conosco ou nos
+              convidar para uma celebração ou evento? Entre em contato.
+              Será uma alegria conversar com você.
+            </p>
+
+          </div>
+
+
+          <div class="contact-actions">
+
+            <!--
+              IMPORTANTE:
+              troque 5511999999999 pelo número real do WhatsApp.
+
+              Exemplo:
+              55 + DDD + número
+            -->
+
+            <a
+              class="whatsapp-button"
+              href="https://wa.me/5511999999999?text=Olá%20Ministério%20Templo%20Vivo!"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ☎ Fale pelo WhatsApp
+            </a>
+
+
+            <div class="social-links">
+
+              <!--
+                Depois substituiremos # pelos links reais.
+              -->
+
+              <a
+                href="#"
+                class="social-link"
+                aria-label="Instagram do Ministério Templo Vivo"
+              >
+                Instagram
+              </a>
+
+              <a
+                href="#"
+                class="social-link"
+                aria-label="YouTube do Ministério Templo Vivo"
+              >
+                YouTube
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ======================================
+       RODAPÉ
+  ======================================= -->
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <div>
+        <span class="footer-brand">
+          Ministério Templo Vivo
+        </span>
+        · Música Católica
+      </div>
+
+      <div>
+        © <span id="ano"></span> · Todos os direitos reservados
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+    document.getElementById("ano").textContent =
+      new Date().getFullYear();
+  </script>
+
 </body>
 </html>
